@@ -1,8 +1,8 @@
 var profile = (function() {
     var copyOnly = function(filename, mid){
   			var list = {
-  				"widgets/package.json":1,
-  				"widgets/widgets.profile":1
+  				"citrix/package.json":1,
+  				"citrix/citrix.profile":1
   			};
   			return (mid in list) || /(png|jpg|jpeg|gif|tiff)$/.test(filename);
     };

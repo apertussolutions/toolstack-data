@@ -1,41 +1,13 @@
-cwd = (new java.io.File(".")).getAbsolutePath();
-
-for(var dojohome = ".", arg, rhinoArgs = this.arguments, i = 0; i < rhinoArgs.length;){
-	arg = (rhinoArgs[i++] + "").split("=");
-	if(arg[0] == "baseUrl"){
-		dojohome = arg[1];
-		break;
-	}
-}
-
-
-if (dojohome.indexOf(".")==0) {
-    realBuildScriptsPath=cwd+"/";
-} else {
-    realBuildScriptsPath=dojohome;
-}
-
-
-
 var profile = {
-    basePath: "../dojo-sdk/util/buildscripts/",
+    basePath: "../src",
+    action: "release",
     layerOptimize: "shrinksafe",
     cssOptimize: "comments",
-    releaseDir: "../../../dist/lib",
 
     packages: [
-        {
-            name: "dojo",
-            location: realBuildScriptsPath + "../../dojo"
-        },
-        {
-            name: "dijit",
-            location: realBuildScriptsPath + "../../dijit"
-        },
-        {
-            name: "citrix",
-            location: cwd+ "/../../../widgets"
-        }
+            "dojo",
+            "dijit",
+            "citrix",
     ],
     layers: {
         "dojo": {
